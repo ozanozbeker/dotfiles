@@ -1,0 +1,149 @@
+// Zed settings
+//
+// For documentation, see: https://zed.dev/docs/configuring-zed
+// To inspect all default settings, run `zed: open default settings`
+// from the command palette (cmd-shift-p / ctrl-shift-p).
+
+{
+  // ----------------------
+  // UI & Theme Settings
+  // ----------------------
+  "disable_ai": true,
+  "features": {
+    "edit_prediction_provider": "none" // Disable predictive suggestions
+  },
+  "icon_theme": "Catppuccin Latte", // Custom icon pack
+  "base_keymap": "VSCode", // Familiar keybindings
+  "ui_font_size": 16,
+  "buffer_font_size": null, // Fallbacks to default buffer font size
+
+  // OpenType font features (disabled here, but can be tweaked)
+  // "buffer_font_features": {
+  //   "calt": false
+  //   // Investigate: You can also set other OpenType features, like setting cv01 to 7
+  // },
+
+  "theme": {
+    "mode": "system", // Automatically switch based on system theme
+    "light": "One Light", // Light theme
+    "dark": "Kanso Zen (Blurred)" // Dark theme
+  },
+
+  "tabs": {
+    "file_icons": true, // Enable file icons in tabs
+    "git_status": true // Show git status on tabs
+  },
+
+  // ----------------------
+  // Editor Behavior
+  // ----------------------
+
+  "format_on_save": "on", // Automatically format files when saving
+  "soft_wrap": "editor_width", // Wrap long lines to editor width
+  "preferred_line_length": 90, // Used for visual guides & formatters
+
+  "diagnostics": {
+    "inline": {
+      "enabled": true // Show diagnostics inline (underlines, etc.)
+    }
+  },
+
+  // ----------------------
+  // Language Configuration
+  // ----------------------
+
+  "languages": {
+    "Python": {
+      "tab_size": 4,
+      "wrap_guides": [80],
+      "language_servers": ["ruff", "pyright"],
+      "formatter": [
+        {
+          "code_actions": {
+            "source.fixAll.ruff": true, // Auto-fix all lint issues
+            "source.organizeImports.ruff": true // Auto-organize imports
+          }
+        },
+        {
+          "language_server": {
+            "name": "ruff"
+          }
+        }
+      ]
+    },
+    "Shell Script": {
+      "formatter": {
+        "external": {
+          "command": "shfmt", // Shell formatter
+          "arguments": ["--filename", "{buffer_path}", "--indent", "2"]
+          // TODO: Evaluate `shfmt` formatting options further
+        }
+      }
+    },
+    "SQL": {
+      "formatter": {
+        "external": {
+          "command": "sql-formatter", // External SQL formatter
+          "arguments": ["--language", "duckdb"] // Set dialect for formatting
+        }
+      }
+    }
+  },
+
+  // ----------------------
+  // Language Server Configuration
+  // ----------------------
+
+  "lsp": {
+    "pyright": {
+      "settings": {
+        "python": {
+          "pythonPath": ".venv/bin/python" // Use project-local Python (uv-compatible)
+        }
+      }
+    },
+    "ruff": {
+      "initialization_options": {
+        "settings": {
+          "lineLength": 80,
+          "lint": {
+            "select": ["F", "E", "W", "I", "UP", "N"],
+            "ignore": ["E501"] // Line too long
+          },
+          "format": {
+            "enabled": true
+          }
+        }
+      }
+    }
+  },
+
+  // ----------------------
+  // Extension Auto-Installation
+  // ----------------------
+
+  "auto_install_extensions": {
+    // Language support
+    "html": true,
+    "dockerfile": true,
+    "docker-compose": true,
+    "toml": true,
+    "git-firefly": true,
+    "sql": true,
+    "ruff": true,
+
+    // Themes and visuals
+    "catppuccin-icons": true,
+    "kanso": true
+  },
+
+  // ----------------------
+  // Terminal Configuration
+  // ----------------------
+
+  "terminal": {
+    "env": {
+      "EDITOR": "zed --wait" // Ensures Zed opens for $EDITOR usage in terminal
+    }
+  }
+}
