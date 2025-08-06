@@ -1,0 +1,5 @@
+# Theme
+theme = nord
+background-opacity = 0.8
+background-blur = true
+background = #0f0f11
