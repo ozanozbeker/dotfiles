@@ -1,0 +1,20 @@
+# --- CLI Tools ---
+brew "bat"
+brew "eza"
+brew "fastfetch"
+brew "gh"
+brew "git"
+brew "pure"
+brew "uv"
+brew "zsh-autosuggestions"
+brew "zsh-syntax-highlighting"
+
+# --- GUI Apps (Casks) ---
+cask "font-jetbrains-mono"
+cask "ghostty"
+cask "google-chrome"
+cask "obs"
+cask "obsidian"
+cask "positron"
+cask "quarto"
+cask "spotify"
