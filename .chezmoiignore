@@ -1,0 +1,7 @@
+# The repo's own files, which chezmoi must not write into ~.
+LICENSE
+README.md
+SECURITY.md
+prek.toml
+rumdl.toml
+tombi.toml
