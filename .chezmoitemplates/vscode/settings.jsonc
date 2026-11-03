@@ -1,0 +1,93 @@
+// VS Code user settings, the same on every OS; chezmoi writes them to the platform's User directory.
+{
+  // ── Quiet UI ────────────────────────────────────────────────────────
+  "workbench.startupEditor": "none",
+  "workbench.tips.enabled": false,
+  "workbench.welcomePage.walkthroughs.openOnInstall": false,
+  "workbench.editor.empty.hint": "hidden",
+  "workbench.activityBar.location": "top",
+  "update.showReleaseNotes": false,
+  "telemetry.telemetryLevel": "off",
+  "extensions.ignoreRecommendations": true,
+  "security.workspace.trust.untrustedFiles": "open",
+
+  // ── Appearance ──────────────────────────────────────────────────────
+  "workbench.colorTheme": "Kanso Zen",
+  "workbench.iconTheme": "catppuccin-macchiato",
+  "editor.fontFamily": "JetBrainsMono Nerd Font",
+  "editor.fontLigatures": true,
+  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font Mono",
+
+  // ── Editor ──────────────────────────────────────────────────────────
+  "editor.minimap.enabled": false,
+  "editor.guides.bracketPairs": "active",
+  "editor.renderWhitespace": "trailing",
+  "editor.rulers": [88], // Ruff's default line length
+  "explorer.compactFolders": false,
+
+  // ── AI lives in Zed ─────────────────────────────────────────────────
+  "chat.disableAIFeatures": true,
+
+  // ── Global automation ───────────────────────────────────────────────
+  "editor.formatOnSave": true,
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "files.trimFinalNewlines": true,
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/.pytest_cache": true,
+    "**/.ruff_cache": true
+  },
+
+  // ── Python (Pyrefly / Ruff) ─────────────────────────────────────────
+  "python.languageServer": "None", // keep Pylance's LSP out of the way
+  "python.testing.pytestEnabled": true,
+  "python.testing.unittestEnabled": false,
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.ruff": "explicit",
+      "source.organizeImports.ruff": "explicit"
+    }
+  },
+
+  // ── SQL / dbt ───────────────────────────────────────────────────────
+  "dbt.dbtPath": "/opt/homebrew/bin/dbt",
+  "dbt.formatOnSave": true,
+  "dbt.lintFixOnSave": true,
+  "dbt.lsp.linter.enabled": true,
+  "[sql]": {
+    "editor.formatOnSave": false // dbt.formatOnSave handles this
+  },
+
+  // ── Prettier (YAML, JS, TS) ─────────────────────────────────────────
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // ── TOML (Tombi) / Markdown & Quarto (rumdl) ────────────────────────
+  "[toml]": {
+    "editor.defaultFormatter": "tombi-toml.tombi"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "rvben.rumdl",
+    "editor.wordWrap": "on"
+  },
+  "[quarto]": {
+    "editor.defaultFormatter": "rvben.rumdl",
+    "editor.wordWrap": "on"
+  },
+  "explorer.confirmDragAndDrop": false,
+  "editor.fontSize": 16,
+  "git.enableSmartCommit": true,
+  "explorer.confirmDelete": false,
+  "claudeCode.hideOnboarding": true,
+  "claudeCode.allowDangerouslySkipPermissions": true,
+  "claudeCode.preferredLocation": "sidebar"
+}
