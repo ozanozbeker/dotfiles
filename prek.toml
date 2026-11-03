@@ -67,7 +67,8 @@ hooks = [
   # Without the flag, the hook checks only while a merge is in progress, so CI checked nothing.
   { id = "check-merge-conflict", args = ["--assume-in-merge"] },
   { id = "check-yaml" },
-  { id = "check-json" },
+  # The editors' settings.json files are JSON with comments, which check-json rejects.
+  { id = "check-json", exclude = "settings\\.json$" },
   { id = "check-case-conflict" },
   # A lockfile is as large as the dependency tree; a Dagster project's `uv.lock` passes 500 KB.
   { id = "check-added-large-files", exclude = '^uv\.lock$' },

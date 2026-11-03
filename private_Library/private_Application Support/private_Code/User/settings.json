@@ -1,4 +1,4 @@
-// VS Code user settings, the same on every OS; chezmoi writes them to the platform's User directory.
+// ~/Library/Application Support/Code/User/settings.json
 {
   // ── Quiet UI ────────────────────────────────────────────────────────
   "workbench.startupEditor": "none",
