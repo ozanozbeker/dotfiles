@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <!-- Updates the global skills in ~/.agents/.skill-lock.json daily at 06:00. launchd runs a missed job at the next wake, which cron does not. -->
+  <key>Label</key>
+  <string>com.ozanozbeker.skills-update</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/opt/homebrew/bin/npx</string>
+    <string>-y</string>
+    <string>skills</string>
+    <string>update</string>
+    <string>-g</string>
+    <string>-y</string>
+  </array>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <!-- launchd gives no PATH; node and git must be found for npx. -->
+    <key>PATH</key>
+    <string>/opt/homebrew/bin:/usr/bin:/bin</string>
+  </dict>
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key>
+    <integer>6</integer>
+    <key>Minute</key>
+    <integer>0</integer>
+  </dict>
+  <key>StandardOutPath</key>
+  <string>/Users/ozanozbeker/Library/Logs/skills-update.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/ozanozbeker/Library/Logs/skills-update.log</string>
+</dict>
+</plist>

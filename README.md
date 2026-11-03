@@ -12,6 +12,18 @@ chezmoi apply
 brew bundle install --global
 ```
 
+Claude Code writes `~/.claude/settings.json` itself, so the repo does not track it.
+The plugins and skills come back with:
+
+```sh
+for m in mattpocock/skills dagster-io/skills polars-inc/skills dbt-labs/dbt-agent-skills ozanozbeker/skills; do claude plugin marketplace add "$m"; done
+for p in polars@polars dagster-expert@dagster mattpocock-skills@mattpocock dbt@dbt-agent-marketplace ozanozbeker-skills@ozanozbeker; do claude plugin install "$p"; done
+for s in quantco/dataframely@dataframely j178/prek@prek github/awesome-copilot@github-actions-efficiency github/awesome-copilot@github-actions-hardening tt-a1i/archify@archify vercel-labs/skills@find-skills; do npx -y skills add "$s" -g -a claude-code --copy -y; done
+launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.ozanozbeker.skills-update.plist
+```
+
+The last line loads the agent that runs `npx skills update -g` at 06:00 each day.
+
 `chezmoi add <file>` copies a file into the repo, `chezmoi diff` shows what `apply` would change, and `chezmoi managed` lists what the repo owns.
 
 ## Layout
