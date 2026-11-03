@@ -7,5 +7,5 @@ rumdl.toml
 tombi.toml
 typos.toml
 {{ if ne .chezmoi.os "darwin" }}
-.Brewfile
+.config/homebrew
 {{ end }}
