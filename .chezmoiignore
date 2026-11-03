@@ -5,3 +5,7 @@ SECURITY.md
 prek.toml
 rumdl.toml
 tombi.toml
+typos.toml
+{{ if ne .chezmoi.os "darwin" }}
+.Brewfile
+{{ end }}

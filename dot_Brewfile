@@ -1,0 +1,112 @@
+tap "anomalyco/tap"
+tap "dbt-labs/dbt", trusted: true
+tap "oven-sh/bun"
+# Run your GitHub Actions locally
+brew "act"
+# Static analysis and lint tool, for (ba)sh scripts
+brew "shellcheck"
+# Static checker for GitHub Actions workflow files
+brew "actionlint"
+# Command-line interface for SQLite
+brew "sqlite"
+# Automate deployment, configuration, and upgrading
+brew "ansible"
+# Checks ansible playbooks for practices and behaviour
+brew "ansible-lint"
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat"
+# Powerful, enterprise-ready, open source web server with automatic HTTPS
+brew "caddy"
+# Console Bonsai is a bonsai tree generator, written in C using ncurses
+brew "cbonsai"
+# Manage your dotfiles across multiple diverse machines, securely
+brew "chezmoi"
+# Pack, ship and run any application as a lightweight container
+brew "docker"
+# Embeddable SQL OLAP Database Management System
+brew "duckdb"
+# Modern, maintained replacement for ls
+brew "eza"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# GitHub command-line tool
+brew "gh"
+# Distributed revision control system
+brew "git"
+# Open source programming language to build simple/reliable/efficient software
+brew "go"
+# Command-line tool for generating regular expressions
+brew "grex"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
+# Open-source, cross-platform JavaScript runtime environment
+brew "node"
+# Swiss-army knife of markup format conversion
+brew "pandoc"
+# Object-relational database system
+brew "postgresql@18", restart_service: :changed, link: true
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# Cross-shell prompt for astronauts
+brew "starship"
+# Official tldr client written in Rust
+brew "tlrc"
+# Extremely fast Python package installer and resolver, written in Rust
+brew "uv"
+# Shell extension to navigate your filesystem faster
+brew "zoxide"
+# OpenCode V2 - the AI coding agent for the terminal
+brew "anomalyco/tap/opencode-v2", trusted: true
+# Public URLs for local services, end-to-end encrypted
+brew "anomalyco/tap/opentunnel", trusted: true
+# Build analytics the way engineers build applications
+brew "dbt-labs/dbt/dbt", trusted: true
+# Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
+brew "oven-sh/bun/bun", trusted: true
+# Terminal-based AI coding assistant
+cask "claude-code"
+cask "font-jetbrains-mono-nerd-font"
+# Terminal emulator that uses platform-native UI and GPU acceleration
+cask "ghostty"
+# Web browser
+cask "google-chrome"
+# Multi-platform web browser
+cask "microsoft-edge"
+# Replacement for Docker Desktop
+cask "orbstack"
+# Scientific and technical publishing system built on Pandoc
+cask "quarto"
+# Open-source code editor
+cask "visual-studio-code"
+vscode "anthropic.claude-code"
+vscode "astral-sh.ty"
+vscode "catppuccin.catppuccin-vsc-icons"
+vscode "charliermarsh.ruff"
+vscode "dbtlabsinc.dbt"
+vscode "esbenp.prettier-vscode"
+vscode "jannchie.ruff-ignore-explainer"
+vscode "mechatroner.rainbow-csv"
+vscode "ms-ossdata.vscode-pgsql"
+vscode "ms-python.debugpy"
+vscode "ms-python.python"
+vscode "ms-python.vscode-pylance"
+vscode "ms-python.vscode-python-envs"
+vscode "ms-vscode.powershell"
+vscode "posit.shiny"
+vscode "quarto.quarto"
+vscode "redhat.vscode-xml"
+vscode "redhat.vscode-yaml"
+vscode "rvben.rumdl"
+vscode "tombi-toml.tombi"
+vscode "webhooked.kanso-theme"
+go "github.com/bootdotdev/bootdev"
+go "golang.org/x/tools/gopls"
+uv "marimo[recommended]"
+uv "pyrefly"
+uv "ruff"
+uv "sqlfluff"
+uv "ty"

@@ -9,6 +9,7 @@ brew install chezmoi
 gh repo clone ozanozbeker/dotfiles ~/dev/dotfiles
 printf 'sourceDir = "~/dev/dotfiles"\n' > ~/.config/chezmoi/chezmoi.toml
 chezmoi apply
+brew bundle install --global
 ```
 
 `chezmoi add <file>` copies a file into the repo, `chezmoi diff` shows what `apply` would change, and `chezmoi managed` lists what the repo owns.
@@ -17,5 +18,6 @@ chezmoi apply
 
 `.chezmoiignore` names the repo's own files, so chezmoi never writes them into `~`.
 Everything else is a target, in chezmoi's naming: `dot_claude/CLAUDE.md` is `~/.claude/CLAUDE.md`.
+`dot_Brewfile` is `~/.Brewfile`, which `brew bundle --global` reads; `brew bundle dump --global --force` rewrites it from what is installed, and it applies on macOS only.
 
 The hooks come from the `none` answer of [templates](https://github.com/ozanozbeker/templates), without its workflows: nothing runs on GitHub.

@@ -1,0 +1,3 @@
+# The comments in dot_Brewfile are the formulae's own descriptions, which `brew bundle dump` rewrites.
+[files]
+extend-exclude = ["dot_Brewfile"]
