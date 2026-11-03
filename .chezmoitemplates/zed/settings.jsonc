@@ -1,0 +1,378 @@
+// Zed settings - Ozan Ozbeker
+
+{
+  //===================//
+  //      General
+  //===================//
+  "diff_view_style": "split",
+  "format_on_save": "on",
+
+  //===================//
+  //  Window & Layout
+  //===================//
+  "default_open_behavior": "new_window",
+  "cli_default_open_behavior": "new_window",
+  "when_closing_with_no_tabs": "keep_window_open",
+  "on_last_window_closed": "quit_app",
+  "restore_on_startup": "launchpad",
+  "session": {
+    "trust_all_worktrees": true,
+    "restore_unsaved_buffers": false,
+  },
+  "title_bar": {
+    "show_branch_status_icon": true,
+  },
+
+  //===================//
+  //     Appearance
+  //===================//
+  "theme": {
+    "mode": "dark",
+    "light": "Kanso Pearl",
+    "dark": "Kanso Zen (Blurred)",
+  },
+  // Neutralize Kanso Zen's blue-tinted UI grays to a black ramp (base #0C0C0C).
+  // Syntax, terminal ANSI palette, and semantic accents (info/hint/icon.accent) are untouched.
+  "theme_overrides": {
+    "Kanso Zen": {
+      "background": "#0c0c0c",
+      "surface.background": "#0c0c0c",
+      "editor.background": "#0c0c0c",
+      "editor.gutter.background": "#0c0c0c",
+      "panel.background": "#0c0c0c",
+      "status_bar.background": "#0c0c0c",
+      "title_bar.background": "#0c0c0c",
+      "toolbar.background": "#0c0c0c",
+      "tab_bar.background": "#0c0c0c",
+      "tab.inactive_background": "#0c0c0c",
+      "terminal.background": "#0c0c0c",
+      "ghost_element.background": "#0c0c0c",
+      "scrollbar.track.background": "#0c0c0c",
+      "scrollbar.track.border": "#0c0c0c",
+      "elevated_surface.background": "#171717",
+      "editor.subheader.background": "#171717",
+      "icon.placeholder": "#171717",
+      "element.disabled": "#171717",
+      "ghost_element.disabled": "#171717",
+      // "link_text.background": "#171717",
+      "error.background": "#171717",
+      "warning.background": "#171717",
+      "success.background": "#171717",
+      "info.background": "#171717",
+      "hint.background": "#171717",
+      "editor.active_line.background": "#1a1a1a",
+      "editor.highlighted_line.background": "#1a1a1a",
+      "tab.active_background": "#1a1a1a",
+      "element.background": "#1a1a1a",
+      "drop_target.background": "#1a1a1a",
+      "editor.invisible": "#1a1a1a",
+      "editor.document_highlight.write_background": "#1a1a1a",
+      "editor.document_highlight.read_background": "#3b3b3b",
+      "border": "#1a1a1a",
+      "border.variant": "#1a1a1aa0",
+      "border.focused": "#1a1a1a",
+      "border.selected": "#1a1a1a",
+      "border.transparent": "#1a1a1a00",
+      "border.disabled": "#1a1a1a80",
+      "scrollbar.thumb.border": "#1a1a1a",
+      // "link_text.border": "#1a1a1a",
+      "error.border": "#1a1a1a",
+      "warning.border": "#1a1a1a",
+      "success.border": "#1a1a1a",
+      "info.border": "#1a1a1a",
+      "hint.border": "#1a1a1a",
+      "element.hover": "#3b3b3b",
+      "element.active": "#3b3b3b",
+      "element.selected": "#3b3b3b",
+      "ghost_element.hover": "#3b3b3b",
+      "ghost_element.active": "#3b3b3b",
+      "ghost_element.selected": "#3b3b3b",
+      "text.placeholder": "#606060",
+      "text.disabled": "#606060",
+      "icon.disabled": "#606060",
+      "editor.line_number": "#606060",
+      "editor.wrap_guide": "#606060",
+      "scrollbar.thumb.background": "#60606034",
+      "scrollbar.thumb.hover_background": "#606060",
+      "pane.focused_border": "#9e9e9e",
+      "panel.focused_border": "#9e9e9e",
+      "editor.active_wrap_guide": "#9e9e9e",
+    },
+    // Same neutral-black ramp, but blurred: editor/panels stay transparent so the
+    // window blur shows through; only the window + bars carry a translucent black tint.
+    "Kanso Zen (Blurred)": {
+      "background.appearance": "blurred",
+      // Transparent -> window blur shows through
+      "editor.background": "#00000000",
+      "editor.gutter.background": "#00000000",
+      "panel.background": "#00000000",
+      "tab_bar.background": "#00000000",
+      "tab.inactive_background": "#00000000",
+      "toolbar.background": "#00000000",
+      "terminal.background": "#00000000",
+      "ghost_element.background": "#00000000",
+      // Single translucent black tint layer (window + bars), ~88%
+      "background": "#0c0c0cf2",
+      "title_bar.background": "#0c0c0cf2",
+      "status_bar.background": "#0c0c0cf2",
+      "surface.background": "#0c0c0c",
+      "scrollbar.track.background": "#0c0c0cf2",
+      "scrollbar.track.border": "#0c0c0cf2",
+      // Raised surfaces (opaque)
+      "elevated_surface.background": "#171717",
+      "editor.subheader.background": "#171717",
+      "icon.placeholder": "#171717",
+      "element.disabled": "#171717e0",
+      "ghost_element.disabled": "#171717e0",
+      // "link_text.background": "#171717",
+      "error.background": "#171717",
+      "warning.background": "#171717",
+      "success.background": "#171717",
+      "info.background": "#171717",
+      "hint.background": "#171717",
+      // Lines / active tab / borders
+      "editor.active_line.background": "#1a1a1a",
+      "editor.highlighted_line.background": "#1a1a1a",
+      "tab.active_background": "#1a1a1a",
+      "element.background": "#1a1a1ae0",
+      "drop_target.background": "#1a1a1a",
+      "editor.invisible": "#1a1a1a",
+      "editor.document_highlight.write_background": "#1a1a1a",
+      "editor.document_highlight.read_background": "#3b3b3b",
+      "border": "#1a1a1ae0",
+      "border.variant": "#1a1a1ae0",
+      "border.focused": "#1a1a1ae0",
+      "border.selected": "#1a1a1ae0",
+      "border.transparent": "#1a1a1a00",
+      "border.disabled": "#1a1a1a80",
+      "scrollbar.thumb.border": "#1a1a1a",
+      // "link_text.border": "#1a1a1a",
+      "error.border": "#1a1a1a",
+      "warning.border": "#1a1a1a",
+      "success.border": "#1a1a1a",
+      "info.border": "#1a1a1a",
+      "hint.border": "#1a1a1a",
+      // Hover / active element states
+      "element.hover": "#3b3b3be0",
+      "element.active": "#3b3b3be0",
+      "element.selected": "#3b3b3be0",
+      "ghost_element.hover": "#3b3b3be0",
+      "ghost_element.active": "#3b3b3be0",
+      "ghost_element.selected": "#3b3b3be0",
+      // Chrome text / scrollbar thumb / focus rings
+      "text.placeholder": "#606060",
+      "text.disabled": "#606060",
+      "icon.disabled": "#606060",
+      "editor.line_number": "#606060",
+      "editor.wrap_guide": "#606060",
+      "scrollbar.thumb.background": "#60606034",
+      "scrollbar.thumb.hover_background": "#606060",
+      "pane.focused_border": "#9e9e9e",
+      "panel.focused_border": "#9e9e9e",
+      "editor.active_wrap_guide": "#9e9e9e",
+    },
+  },
+  "icon_theme": {
+    "mode": "dark",
+    "light": "Catppuccin Latte",
+    "dark": "Catppuccin Mocha",
+  },
+  "buffer_line_height": {
+    "custom": 1.45,
+  },
+  "buffer_font_size": 16,
+  "buffer_font_features": { "calt": true },
+  "ui_font_size": 16,
+  "current_line_highlight": "gutter",
+  "terminal": { "cursor_shape": "bar" },
+
+  //===================//
+  //      Editor
+  //===================//
+  "soft_wrap": "editor_width",
+  "preferred_line_length": 88,
+  "auto_signature_help": false,
+  "show_signature_help_after_edits": true,
+  "hover_popover_delay": 100,
+  "inlay_hints": {
+    "enabled": true,
+    "show_background": true,
+  },
+  "extend_comment_on_newline": false,
+
+  //===================//
+  // Languages & Tools
+  //===================//
+  "diagnostics": {
+    "inline": {
+      "enabled": true,
+    },
+  },
+
+  "languages": {
+    "Markdown": {
+      "remove_trailing_whitespace_on_save": true,
+      "show_wrap_guides": false,
+      "language_servers": ["rumdl"],
+      "code_actions_on_format": {
+        "source.fixAll.rumdl": true,
+      },
+      "formatter": { "language_server": { "name": "rumdl" } },
+    },
+    "Python": {
+      "preferred_line_length": 88,
+      "wrap_guides": [88],
+      "language_servers": ["ty", "ruff"],
+    },
+    "R": {
+      "language_servers": ["air", "r_language_server", "..."],
+      "use_on_type_format": false,
+    },
+    "SQL": {
+      "formatter": {
+        "external": {
+          "command": "sqlfluff", // uv tool install sqlfluff
+          "arguments": ["format", "--dialect", "ansi", "-"],
+        },
+      },
+    },
+    "TOML": {
+      "language_servers": ["tombi", "toml", "..."],
+      "formatter": { "language_server": { "name": "tombi" } },
+    },
+  },
+
+  "lsp": {
+    "ruff": {
+      "initialization_options": {
+        "settings": {
+          "configurationPreference": "filesystemFirst",
+        },
+      },
+    },
+  },
+
+  //===================//
+  //   Search & Files
+  //===================//
+  "search": {
+    "center_on_match": true,
+  },
+  "restore_on_file_reopen": false,
+  "close_on_file_delete": true,
+  "file_scan_exclusions": [
+    "**/.DS_Store",
+    "**/Thumbs.db",
+    ".pytest_cache",
+    ".rumdl_cache",
+    ".ruff_cache",
+    "__marimo__",
+    "__pycache__",
+  ],
+
+  //===================//
+  //       Panels
+  //===================//
+  "project_panel": {
+    "dock": "right",
+    "sort_order": "lower",
+    "indent_guides": {
+      "show": "always",
+    },
+    "hide_root": true,
+    "git_status_indicator": true,
+    "entry_spacing": "standard",
+    "auto_fold_dirs": false,
+  },
+  "outline_panel": {
+    "dock": "right",
+  },
+  "collaboration_panel": {
+    "dock": "right",
+  },
+  "git_panel": {
+    "file_icons": true,
+    "dock": "right",
+    "tree_view": true,
+  },
+
+  //===================//
+  //  Version Control
+  //===================//
+  "git": {
+    "inline_blame": {
+      "show_commit_summary": true,
+    },
+  },
+
+  //===================//
+  //        AI
+  //===================//
+  "agent_servers": {
+    "codex-acp": {
+      "default_config_options": {
+        "reasoning_effort": "ultra",
+        "fast-mode": true,
+        "model": "gpt-5.6-terra",
+      },
+      "type": "registry",
+    },
+    "claude-acp": {
+      "favorite_config_option_values": {
+        "effort": ["max"],
+        "model": ["opus[1m]"],
+      },
+      "default_config_options": {
+        "agent": "caveman:CLAUDE",
+        "effort": "max",
+        "mode": "bypassPermissions",
+        "model": "opus",
+        "fast": true,
+      },
+      "type": "registry",
+    },
+  },
+  "agent": {
+    "dock": "left",
+    "max_content_width": 1200,
+    "default_width": 800,
+    "favorite_models": [],
+    "model_parameters": [],
+  },
+  "edit_predictions": {
+    "mode": "subtle",
+  },
+
+  //===================//
+  //     Extensions
+  //===================//
+  "auto_install_extensions": {
+    // Web
+    "html": true,
+    "scss": true,
+
+    // Editor
+    "catppuccin-icons": true,
+    "kanso": true,
+    "comment": true,
+    "log": true,
+    "env": true,
+
+    // Version Control
+    "git-firefly": true,
+
+    // TOML
+    "toml": true,
+    "tombi": true,
+
+    // R
+    "r": true,
+    "air": true,
+
+    // Other
+    "sql": true,
+    "quarto": true,
+    "rainbow-csv": true,
+    "rumdl": true,
+  },
+}

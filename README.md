@@ -20,7 +20,7 @@ brew bundle install --global
 Everything else is a target, in chezmoi's naming: `dot_claude/CLAUDE.md` is `~/.claude/CLAUDE.md`.
 `dot_config/homebrew/Brewfile` is `~/.config/homebrew/Brewfile`, which `brew bundle --global` reads once `.zshrc` sets `XDG_CONFIG_HOME`; `brew bundle dump --global --force --no-uv` rewrites it from what is installed, and it applies on macOS only.
 
-VS Code's `settings.json` lives in a different directory per OS, so its body sits in `.chezmoitemplates/vscode/settings.jsonc` and a one-line template at each OS path includes it; `.chezmoiignore` keeps the other two paths off a machine.
+VS Code's and Zed's `settings.json` live in a different directory per OS, so each body sits under `.chezmoitemplates/<editor>/settings.jsonc` and a one-line template at each OS path includes it; `.chezmoiignore` keeps the other paths off a machine.
 Settings Sync is off, so the repo owns the settings and the `vscode` lines in the Brewfile own the extensions.
 No VS Code state is tracked: `globalStorage`, `workspaceStorage` and `History` stay local.
 
