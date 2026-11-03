@@ -1,0 +1,9 @@
+eval "$(starship init zsh)"
+echo "Hello Mr. Ozbeker!"
+
+# The XDG default, set because brew reads ~/.config/homebrew/Brewfile only when it is set.
+export XDG_CONFIG_HOME="$HOME/.config"
+export HOMEBREW_NO_ENV_HINTS=1
+export PATH="$PATH:$HOME/go/bin"
+
+eval "$(zoxide init zsh)"
