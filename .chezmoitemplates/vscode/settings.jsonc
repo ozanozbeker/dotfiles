@@ -52,9 +52,7 @@
   },
 
   // ── SQL / dbt ───────────────────────────────────────────────────────
-{{- if eq .chezmoi.os "darwin" }}
-  "dbt.dbtPath": "/opt/homebrew/bin/dbt", // Homebrew's path; Windows finds dbt on PATH
-{{- end }}
+  // No dbt.dbtPath: the extension finds each workspace's .venv dbt, which uv.lock pins.
   "dbt.formatOnSave": true,
   "dbt.lintFixOnSave": true,
   "dbt.lsp.linter.enabled": true,
