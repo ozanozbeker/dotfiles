@@ -52,7 +52,9 @@
   },
 
   // ── SQL / dbt ───────────────────────────────────────────────────────
-  "dbt.dbtPath": "/opt/homebrew/bin/dbt",
+{{- if eq .chezmoi.os "darwin" }}
+  "dbt.dbtPath": "/opt/homebrew/bin/dbt", // Homebrew's path; Windows finds dbt on PATH
+{{- end }}
   "dbt.formatOnSave": true,
   "dbt.lintFixOnSave": true,
   "dbt.lsp.linter.enabled": true,
