@@ -1,0 +1,5 @@
+
+**/.claude/settings.local.json
+.DS_Store
+# The Claude app's dev-server entries for its browser pane, written per session.
+.claude/launch.json

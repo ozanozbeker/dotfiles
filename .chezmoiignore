@@ -22,3 +22,6 @@ AppData
 {{ if eq .chezmoi.os "windows" }}
 .config/zed
 {{ end }}
+# Credentials, kept out even if a directory is ever added recursively.
+.config/gh/hosts.yml
+.zshenv
